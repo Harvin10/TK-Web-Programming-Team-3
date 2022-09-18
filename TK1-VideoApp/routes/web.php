@@ -16,3 +16,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/video', function () {
+    return view('home');
+});
+
+Route::post('uploadVideo', 'App\Http\Controllers\VideoController@uploadVideo')->name('videos.uploadVideo');
