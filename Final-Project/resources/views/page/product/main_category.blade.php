@@ -34,7 +34,7 @@
           <td>{{$item->title}}</td>
           <td>{{$item->slug}}</td>
           <td><button type="button" class="btn btn-warning">EDIT</button></td>
-          <td><button type="button" class="btn btn-danger">DELETE</button></td>
+          <td><button type="button" class="btn btn-danger" onclick="handle_confirm('Are you sure?','Yes','No','DELETE','{{route('products.category_destroy',$item->id)}}');">DELETE</button></td>
         </tr>
       @endforeach
       </tbody>

@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\ProductCategory;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
-use App\Models\ProductCategory;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 use DB;
@@ -165,7 +165,7 @@ class ProductController extends Controller
         $product->update();
         return response()->json([
             'alert' => 'success',
-            'message' => 'products Updated',
+            'message' => 'Product Updated',
         ]);
     }
     public function destroy(Product $product)
@@ -175,17 +175,17 @@ class ProductController extends Controller
         $product->delete();
         return response()->json([
             'alert' => 'success',
-            'message' => 'products Deleted',
+            'message' => 'Product Deleted',
         ]);
     }
-    public function category_destoy(Request $request)
+    public function category_destroy(ProductCategory $category)
     {
-        Storage::delete($product->cover);
-        Storage::delete($product->trailer);
-        $product->delete();
+        Storage::delete($category->cover);
+        Storage::delete($category->trailer);
+        $category->delete();
         return response()->json([
             'alert' => 'success',
-            'message' => 'products Deleted',
+            'message' => 'Category Deleted',
         ]);
     }
 }

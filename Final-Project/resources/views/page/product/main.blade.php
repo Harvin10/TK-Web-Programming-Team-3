@@ -37,8 +37,8 @@
           <td>{{$item->A}}</td>
           <td>{{$item->price}}</td>
           <td><img src="{{URL::asset('uploads/'.$item->cover)}}"  width="100px"></td>
-          <td><button type="button" class="btn btn-warning">EDIT</button></td>
-          <td><button type="button" class="btn btn-danger">DELETE</button></td>
+          <td><button type="button" class="btn btn-warning" onclick="load_input('{{route('products.edit',$item->id)}}');">EDIT</button></td>
+          <td><button type="button" class="btn btn-danger" onclick="handle_confirm('Are you sure?','Yes','No','DELETE','{{route('products.destroy',$item->id)}}');">DELETE</button></td>
         </tr>
       @endforeach
       </tbody>

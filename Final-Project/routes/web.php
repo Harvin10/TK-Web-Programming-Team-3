@@ -18,7 +18,7 @@ Route::resource('products', ProductController::class);
 Route::get('/category',[ProductController::class, 'category'])->name('products.category');
 Route::get('/category_create',[ProductController::class, 'input_category'])->name('products.create_cat');
 Route::post('/category_store',[ProductController::class, 'store_category'])->name('products_cat.store');
-Route::post('/category_destroy',[ProductController::class, 'category_destoy'])->name('productscategory.destroy');
+Route::post('/category_destroy',[ProductController::class, 'category_destroy'])->name('products.category_destroy');
 Route::get('/list-cart',[CartController::class, 'index'])->name('cart.index');
 Route::post('/add-cart',[CartController::class, 'store'])->name('cart.add');
 Route::post('/delete-cart/{id}',[CartController::class, 'delete'])->name('cart.delete');
